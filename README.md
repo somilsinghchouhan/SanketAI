@@ -148,9 +148,13 @@ VITE_API_BASE_URL=http://localhost:8000
 
 ## 🚀 Getting Started
 
-### Prerequisites
-- **Python**: 3.10 or higher
-- **Node.js**: 18.0 or higher (with `npm`)
+### 🔑 Quick Demo / Evaluator Credentials
+For testing and hackathon evaluation:
+- **Officer ID**: `IND-SKT-9001`
+- **Password**: `SanketDemo@2026`
+*(The login page also provides a 1-click **Auto-Fill** button)*
+
+---
 
 ### 1. Backend Setup
 

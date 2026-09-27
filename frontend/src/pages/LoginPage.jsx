@@ -11,7 +11,8 @@ import {
   CheckCircle2,
   FileCheck2,
   Network,
-  ShieldCheck
+  ShieldCheck,
+  Sparkles
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import SanketLogo from '../components/common/SanketLogo';
@@ -143,6 +144,36 @@ export default function LoginPage() {
               <span>{error}</span>
             </div>
           )}
+
+          {/* Hackathon Evaluator Quick Access */}
+          <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200/80 text-xs space-y-2.5 shadow-xs">
+            <div className="flex items-center justify-between">
+              <span className="font-bold text-blue-900 flex items-center gap-1.5 text-xs">
+                <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+                Hackathon Demo Access
+              </span>
+              <button
+                type="button"
+                onClick={() => {
+                  setOfficerId('IND-SKT-9001');
+                  setPassword('SanketDemo@2026');
+                }}
+                className="text-[11px] font-semibold text-blue-700 bg-white hover:bg-blue-100/60 border border-blue-300 px-2.5 py-1 rounded-lg transition-colors shadow-xs"
+              >
+                Auto-Fill
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-2 text-[11px] font-mono text-slate-700 bg-white/80 p-2.5 rounded-lg border border-blue-100">
+              <div>
+                <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Officer ID</span>
+                <span className="font-semibold text-blue-950">IND-SKT-9001</span>
+              </div>
+              <div>
+                <span className="text-slate-400 block text-[10px] uppercase font-bold tracking-wider">Password</span>
+                <span className="font-semibold text-blue-950">SanketDemo@2026</span>
+              </div>
+            </div>
+          </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
