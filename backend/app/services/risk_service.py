@@ -224,19 +224,30 @@ class RiskService:
             except Exception:
                 refs = []
 
-            for ref_str in refs:
+            for ref_item in refs:
+                if isinstance(ref_item, dict):
+                    fname = ref_item.get("file", "evidence.csv")
+                    fmatch = ref_item.get("match", "SHA-256 MATCH")
+                    fhash = ref_item.get("hash")
+                else:
+                    fname = str(ref_item)
+                    fmatch = "SHA-256 MATCH"
+                    fhash = None
+
                 # Find matching evidence
                 matching_ev = None
                 for ev in evidence_files.values():
-                    if ev.original_filename in ref_str:
+                    if ev.original_filename in fname:
                         matching_ev = ev
                         break
-                
-                h = matching_ev.sha256_hash[:20] + "..." if matching_ev else "N/A"
+
+                if not fhash:
+                    fhash = (matching_ev.sha256_hash[:20] + "...") if matching_ev else "N/A"
+
                 sources.append(SourceItem(
-                    file=ref_str,
-                    hash=h,
-                    match="SHA-256 MATCH"
+                    file=fname,
+                    hash=fhash,
+                    match=fmatch
                 ))
 
             if not sources and evidence_files:
