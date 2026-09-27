@@ -1,0 +1,60 @@
+# ==========================================
+# SanketAI - Git Ignore Configuration
+# ==========================================
+
+# Environment variables & secrets
+.env
+.env.*
+.env.local
+.env.*.local
+!.env.example
+
+# Python runtime & virtual environments
+.venv/
+venv/
+env/
+ENV/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local databases & SQLite files
+*.db
+*.sqlite
+*.sqlite3
+
+# Local evidentiary storage, file uploads & generated reports
+backend/storage/
+storage/
+uploads/
+generated/
+reports/
+
+# Node & Frontend build output
+node_modules/
+dist/
+build/
+
+# IDE & Editor temporary files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Operating System files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Antigravity / Gemini temporary artifacts and session recordings
+.agents/
+*.webp
+*.webm
+*.mp4
